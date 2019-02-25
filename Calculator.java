@@ -10,6 +10,7 @@ package cse360assign2;
 public class Calculator {
 
     private int total;
+    private String history;
 
     /**
      * Constructor for Calculator class
@@ -18,6 +19,7 @@ public class Calculator {
      */
     public Calculator() {
         this.total = 0; // not needed - included for clarity
+        this.history = "0"; // initialize history string starting from "0"
     }
 
     /**
@@ -36,6 +38,7 @@ public class Calculator {
      * @return void
      */
     public void add(int value) {
+        this.history += " + " + value;
         this.total += value;
     }
 
@@ -46,6 +49,7 @@ public class Calculator {
      * @return void
      */
     public void subtract(int value) {
+        this.history += " - " + value;
         this.total -= value;
     }
 
@@ -56,6 +60,7 @@ public class Calculator {
      * @return void
      */
     public void multiply(int value) {
+        this.history += " * " + value;
         this.total *= value;
     }
 
@@ -68,6 +73,7 @@ public class Calculator {
      * @return void
      */
     public void divide(int value) {
+        this.history += " / " + value;
         if (value == 0) {
             this.total = 0;
         } else {
@@ -81,6 +87,6 @@ public class Calculator {
      * @return void
      */
     public String getHistory() {
-        return "";
+        return this.history;
     }
 }
