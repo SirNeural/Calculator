@@ -17,7 +17,7 @@ public class Calculator {
      * @return void
      */
     public Calculator() {
-        total = 0; // not needed - included for clarity
+        this.total = 0; // not needed - included for clarity
     }
 
     /**
@@ -36,7 +36,7 @@ public class Calculator {
      * @return void
      */
     public void add(int value) {
-
+        this.total += value;
     }
 
     /**
@@ -46,7 +46,7 @@ public class Calculator {
      * @return void
      */
     public void subtract(int value) {
-
+        this.total -= value;
     }
 
     /**
@@ -56,7 +56,7 @@ public class Calculator {
      * @return void
      */
     public void multiply(int value) {
-
+        this.total *= value;
     }
 
     /**
@@ -68,7 +68,11 @@ public class Calculator {
      * @return void
      */
     public void divide(int value) {
-
+        if (value == 0) {
+            this.total = 0;
+        } else {
+            this.total /= value;
+        }
     }
 
     /**
